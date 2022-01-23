@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://i.ibb.co/dMPFDpB/dingbiao.png">
+    <title>Home</title>
+
+<style>
+header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    font-size:25px;
+    padding:25px;
+}
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;
+}
+</style>
+<!--头部尾部向上css-->
+<style>
+            /* 下拉按钮样式 */
+        
+        .dropbtn {
+            background-color: black;
+            color: white;
+            padding: 16px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        /* 容器 <div> - 需要定位下拉内容 */
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        /* 下拉内容 (默认隐藏) */
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 16px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+        /* 下拉菜单的链接 */
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        /* 鼠标移上去后修改下拉菜单链接颜色 */
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+        /* 在鼠标移上去后显示下拉菜单 */
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        /* 当下拉内容显示后修改下拉按钮的背景颜色 */
+        
+        .dropdown:hover .dropbtn {
+            background-color: #54277ece;
+            /* 这是居中：style="text-align:center";color:+字体颜色 */
+</style>
+<!-- 向上是下拉列表css-->
+<style>
+<!--@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");-->
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.container {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  height: 100px;
+}
+.container .search {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: crimson;
+  border-radius: 50%;
+  transition: all 1s;
+  z-index: 4;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+}
+.container .search:hover {
+  cursor: pointer;
+}
+.container .search::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 22px;
+  right: 0;
+  bottom: 0;
+  left: 22px;
+  width: 12px;
+  height: 2px;
+  background: white;
+  transform: rotate(45deg);
+  transition: all .5s;
+}
+.container .search::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -5px;
+  right: 0;
+  bottom: 0;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all .5s;
+}
+.container input {
+  font-family: 'Inconsolata', monospace;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: crimson;
+  color: white;
+  text-shadow: 0 0 10px crimson;
+  padding: 0 80px 0 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+  opacity: 0;
+  z-index: 5;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+}
+.container input:hover {
+  cursor: pointer;
+}
+.container input:focus {
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+}
+.container input:focus ~ .search {
+  right: -250px;
+  background: #151515;
+  z-index: 6;
+}
+.container input:focus ~ .search::before {
+  top: 0;
+  left: 0;
+  width: 25px;
+}
+.container input:focus ~ .search::after {
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  border: none;
+  background: white;
+  border-radius: 0%;
+  transform: rotate(-45deg);
+}
+.container input::placeholder {
+  color: white;
+  opacity: 0.5;
+  font-weight: bolder;
+}
+</style>
+<!--向上是霓虹搜索栏css-->
+<style>
+text-align: center;
+background-color: #ffc5b3;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+-moz-transform: translate(-50%, -50%);
+-o-transform: translate(-50%, -50%);
+background-image: radial-gradient(#ffeded, #ffc7c7);
+
+}
+    .textCon {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 700px;
+    height: 60px;
+    margin: 50px auto;
+}
+
+.text {
+    font-size: 48px;
+}
+
+.heart {
+    width: 80px;
+    height: 80px;
+    background-color: #cc2a5d;
+    margin: 200px auto;
+    position: relative;
+    transform: rotate(45deg);
+    animation: heart 1s ease-in infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #cc2a5d;
+    border-radius: 50%;
+}
+
+.heart::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+}
+
+.heart::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(0.8) rotate(45deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8) rotate(45deg);
+        opacity: 0.8;
+    }
+}
+
+.textCon .item {
+    position: absolute;
+    opacity: 0;
+    background-color: #cc2a5d;
+    transform: rotate(45deg);
+    animation: hearts 3s ease-in infinite;
+}
+
+.textCon .item::before,
+.textCon .item::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #cc2a5d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+.textCon .item::before {
+    transform: translateX(-50%);
+}
+
+.textCon .item::after {
+    transform: translateY(-50%);
+}
+
+@keyframes hearts {
+    0% {
+        opacity: 0;
+        transform: translateY(0%) rotate(45deg);
+    }
+    20% {
+        opacity: 0.8;
+        transform: translateY(-20%) rotate(45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-1000%) rotate(45deg);
+    }
+}
+
+.days-label {
+    font-size: 30px;
+}
+
+.seconds {
+    margin-top: 10px;
+    font-size: 32px;
+    font-family: "Monda_bo", Georgia, sans-serif;
+    width: auto;
+    text-align: center;
+}
+
+.seconds-label {
+    margin-top: 32px;
+    font-size: 32px;
+    font-family: "Monda_no", Georgia, sans-serif;
+    width: auto;
+    text-align: center;
+}
+
+.container {
+    position: absolute;
+}
+
+.days {
+    font-size: 40px;
+    width: auto;
+    text-align: center;
+}
+
+.words {
+    font-size: 2.0em;
+    font-family: 'Regular', cursive;
+    width: auto;
+    text-align: center;
+}
+</style>
+<!--计时爱心背景布局css-->
+
+</head>
+
+<body>
+    <header>
+        <b>孫先生的笔记</b>
+    </header>
+    <div class="dropdown" style="float:right">
+        <button class="dropbtn"><b>孫</b></button>
+        <div class="dropdown-content">
+            <a href="https://cn.bing.com/" target="_blank"><img border="0" src="https://cn.bing.com/sa/simg/favicon-2x.ico" width="100%" height="100%"></a>
+            <a href="https://www.bilibili.com/" target="_blank"><img border="0" src="https://www.bilibili.com/favicon.ico?v=1" width="100%" height="100%"></a>
+            <a href="https://www.amap.com/" target="_blank"><img border="0" src="https://a.amap.com/pc/static/favicon.ico" width="120%" height="120%"></a>
+            <a href="https://music.163.com/" target="_blank"><img border="0" src="http://p3.music.126.net/tBTNafgjNnTL1KlZMt7lVA==/18885211718935735.jpg" width="120%" height="120%"></a>
+            <a href="https://wallhaven.cc/" target="_blank"><img border="0" src="https://wallhaven.cc/favicon.ico" width="120%" height="120%"></a>
+        </div>
+    </div>
+<!-- 右侧下拉列表 -->
+    <div class="container">
+  <form action="https://www.baidu.com/s" target="_blank">
+  <input type="text" name="wd" autocomplete="off" placeholder="乖乖,孙先生很爱你哦.">
+  <div class="search"></div>
+  </form></div>
+<!--霓虹搜索栏-->
+    <div class="textCon">
+        <div class="words">我的小乖乖,今天是<br>认识你的第</div>
+        <div class="days">
+            <span class="days-number">2021</span>
+            <span class="days-label">天</span>
+        </div>
+        <div class="seconds">15 hours 24 minutes 30 seconds</div>
+    </div>
+    <div class="heart"></div>
+<!--时间计时-->
+    <footer>
+        <a target="_blank" style="color:white; text-decoration:none;" href="https://v.douyin.com/LdwKFyX/">贾女士</a>的导航
+    </footer>
+<script>
+        ! function(e, t, a) {
+            function n() {
+                c(".love{width: 20px;height: 20px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.love:after,.love:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.love:after{top: -10px;}.love:before{left: -10px;}"), o(), r()
+            }
+
+            function r() {
+                for (var e = 0; e < d.length; e++) d[e].alpha <= 0 ? (t.body.removeChild(d[e].el), d.splice(e, 1)) : (d[e].y--, d[e].scale += .004, d[e].alpha -= .013, d[e].el.style.cssText = "left:" + d[e].x + "px;top:" + d[e].y + "px;opacity:" + d[e].alpha + ";transform:scale(" + d[e].scale + "," + d[e].scale + ") rotate(45deg);background:" + d[e].color + ";z-index:99999");
+                requestAnimationFrame(r)
+            }
+
+            function o() {
+                var t = "function" == typeof e.onclick && e.onclick;
+                e.onclick = function(e) {
+                    t && t(), i(e)
+                }
+            }
+
+            function i(e) {
+                var a = t.createElement("div");
+                a.className = "love", d.push({
+                    el: a,
+                    x: e.clientX - 5,
+                    y: e.clientY - 5,
+                    scale: 1,
+                    alpha: 1,
+                    color: s()
+                }), t.body.appendChild(a)
+            }
+
+            function c(e) {
+                var a = t.createElement("style");
+                a.type = "text/css";
+                try {
+                    a.appendChild(t.createTextNode(e))
+                } catch (t) {
+                    a.styleSheet.cssText = e
+                }
+                t.getElementsByTagName("head")[0].appendChild(a)
+            }
+
+            function s() {
+                return "#cc2a5d"
+            }
+            var d = [];
+            e.requestAnimationFrame = function() {
+                return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function(e) {
+                    setTimeout(e, 1e3 / 60)
+                }
+            }(), n()
+        }(window, document);
+        // rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")
+</script>
+<!--点击爱心特效js-->
+<script>
+    var arr = "2021-09-10 15:33:00".split(/[- :]/); //改这里
+var box = document.getElementsByClassName('textCon')[0];
+
+function init() {
+    var width = box.offsetWidth;
+    var count = parseInt(width / 50 * 5);
+    for (var i = 0; i < count; i++) {
+        var size = parseInt(ran(60, 120) / 10);
+        var ele = document.createElement('div');
+        ele.classList.add('item');
+        ele.style.width = size + 'px';
+        ele.style.height = size + 'px';
+        ele.style.left = ran(0, 95) + '%';
+        ele.style.top = ran(20, 80) + '%';
+        ele.style.animationDelay = ran(0, 30) / 10 + 's';
+        box.appendChild(ele);
+    }
+}
+
+function ran(min, max) {
+    min = parseInt(min);
+    max = parseInt(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function timer_start() {
+
+    var start_time = new Date(arr[0], arr[1] - 1, arr[2], arr[3], arr[4], arr[5]);
+    // var start_time =  new Date(beginTime);
+    // var start_time = Date.parse(beginTime);
+    var duration = parseInt(new Date() - start_time) / 1000;
+    var seconds = parseInt(duration % 60);
+    if (seconds < 10)
+        seconds = "0" + seconds;
+    duration = parseInt(duration / 60);
+    var minutes = duration % 60;
+    if (minutes < 10)
+        minutes = "0" + minutes;
+    duration = parseInt(duration / 60);
+    var hours = duration % 24;
+    if (hours < 10)
+        hours = "0" + hours;
+    duration = parseInt(duration / 24);
+    var days = duration;
+    document.getElementsByClassName('days-number')[0].innerHTML = ("" + days);
+    document.getElementsByClassName('seconds')[0].innerHTML = (hours + " 时 " + minutes + " 分 " + seconds + " 秒");
+}
+window.setInterval(timer_start, 1000);
+timer_start();
+init();
+</script>
+<!--时间计时js-->
+</body>
+
+</html>
